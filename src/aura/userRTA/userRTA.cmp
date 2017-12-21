@@ -2,7 +2,6 @@
     <aura:attribute name="user" type="User"/>
     <aura:attribute name="orgname" type="String"/>
     <aura:attribute name="orglinks" type="Org_Links__c"/>
-    
     <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
     
     <lightning:layout class="slds-card slds-theme_default">
@@ -10,7 +9,7 @@
     <div style="padding:10px;" class="slds-theme_default">
         <table border="0" width="100%">
         	<tr>
-            	<td style="vertical-align:top;padding:10px;" width="50%"><h1 class="slds-text-heading_small">My Links (<a href="{!'/' + v.user.Id}">edit</a>)</h1>
+            	<td style="vertical-align:top;padding:10px;" width="50%"><h1 class="slds-text-heading_small">My Links (<a href="{!'/one/one.app#/setup/page?nodeId=ManageUsers&amp;address=%2F' + v.user.Id + '%3Fnoredirect%3D1%26isUserEntityOverride%3D1'}">edit</a>)</h1>
                     <br/>
                     <aura:if isTrue="{!v.user.User_Rich_Text__c==null}">
                         Edit the <strong>User Rich Text</strong> field on your <strong>User</strong> record to add personal links to this component.
@@ -21,20 +20,10 @@
                 </td>
                 <td style="vertical-align:top;padding:10px;"  width="50%"><h1 class="slds-text-heading_small">{!v.orgname} Links</h1>
         			<br/>
-                    <aura:if isTrue="{!v.orglinks.LInks_RTA__c==null}">
-       						Create an <strong>Org Links record</strong> to show links in this component.
-                        <aura:set attribute="else">
-                        	<ui:outputRichText class="slds-text-longform" value="{!v.orglinks.LInks_RTA__c}"/>    
-                        </aura:set>
-                    </aura:if>
+       				<ui:outputRichText class="slds-text-longform" value="{!v.orglinks.Links_RTA__c}"/>
                 </td>
             </tr>
         </table>
-       
-        
-        
     </div>
-        
-
     </lightning:layout>
 </aura:component>

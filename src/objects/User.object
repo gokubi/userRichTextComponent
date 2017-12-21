@@ -3,7 +3,6 @@
     <fields>
         <fullName>User_Rich_Text__c</fullName>
         <externalId>false</externalId>
-        <inlineHelpText>field for links in component</inlineHelpText>
         <label>User Rich Text</label>
         <length>32768</length>
         <trackFeedHistory>false</trackFeedHistory>
