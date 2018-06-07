@@ -28,7 +28,9 @@ private class userRTAcontroller_TEST
 
 		// Then
 		userRTAcontroller myController = new userRTAcontroller();
-
+		userRTAcontroller.getMyUser();
+		userRTAcontroller.getOrgLinks();
+        	userRTAcontroller.getOrgName();
 	
 	}
 }
